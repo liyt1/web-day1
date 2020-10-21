@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <span v-text="message">
+    <!--        下面这个被覆盖了-->
+        我giao了
+    </span>
+    v-text跟{{}}都会传data中定义的值,只是前者会覆盖掉,后者则会进行拼接
+</div>
+
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            message : '我要好好学习！'
+        },
+    })
+</script>
+
+
+
+</body>
+</html>

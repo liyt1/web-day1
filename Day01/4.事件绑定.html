@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h3>老子的年纪是：{{ age }}</h3>
+    <input type="button" value="点老子长大" v-on:click="add"> <br>
+    <input type="button" value="点老子减小" v-on:click="reduce">
+<!--    就是个这，也没啥-->
+</div>
+
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            age : 18
+        },
+        methods: {
+            add: function () {
+                this.age++
+            },
+            reduce: function () {
+                this.age--
+            }
+        }
+    })
+</script>
+
+
+</body>
+</html>

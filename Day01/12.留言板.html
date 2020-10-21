@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="msg">
+    <input type="button" value="发表留言" @click="up">
+    <ul>
+        <li v-for="(note,index) in notebook" :key="index">
+            <span>
+                {{ note }}<a href="javascript:;" @click="down">删除</a>
+            </span>
+        </li>
+    </ul>
+    共有{{ notebook.length }}条留言
+    <input type="button" value="删除所有" @click="del" v-if="notebook.length">
+
+</div>
+
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            notebook: ['我是你爹','我giao泥马勒戈壁'],
+            msg: '',
+            a:true
+        },
+        methods : {
+            up() {
+                let a = this.msg
+                if (a) {
+                    // this.notebook.push(this.msg)
+                    this.notebook.unshift(this.msg)
+                    this.msg = ''
+                }
+            },
+            down(index) {
+                this.notebook.splice(index,1)
+            },
+            del() {
+                let a = this.notebook
+                this.notebook=[]
+            }
+
+
+        }
+    })
+</script>
+
+
+</body>
+</html>

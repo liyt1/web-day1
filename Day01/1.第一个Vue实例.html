@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h3>{{ message }}</h3>
+    {{ one }}
+</div>
+
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            message : "好好学习！",
+            one : "第一个实例是不是就是这么简单？",
+        },
+    })
+</script>
+
+
+</body>
+</html>

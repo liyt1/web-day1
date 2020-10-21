@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="app">
+<!-- v-bind: 用来绑定标签的属性从而可以通过vue的实例来修改标签的属性 -->
+    <img src="比心.jpg" title="比心" height="500" :class="{aa: giao}">
+    <input type="button" value="改变图片的样式" @click="addCss">
+    <input type="button" value="切换图片" @click="changeImg">
+    
+</div>
+
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            giao : false
+        },
+        methods : {
+            addCss() {
+                this.giao = !this.giao
+            },
+            changeImg() {
+                this.src = 'https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3125272016,601935677&fm=26&gp=0.jpg'
+            },
+        }
+    })
+</script>
+
+
+</body>
+</html>
