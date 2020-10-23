@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--    computed声明的是方法属性，不可以与data中的变量重复    -->
+    <input type="number" v-model="shi" max="9" min="0">
+    <input type="number" v-model="ge" max="9" min="0">
+    <h3>结果是：{{result}}</h3>
+</div>
+
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            num: 30,
+            shi: '',
+            ge: '',
+        },
+        methods: {
+
+        },
+        computed :{
+            result() {
+                console.log(111111);
+                return this.shi * 10 + +this.ge
+                // 这里最后的值得加上个return
+                // 说实话，这个我还是不太熟练的呢
+            }
+        }
+    })
+</script>
+
+
+</body>
+</html>
